@@ -49,7 +49,7 @@ def get_arrangements():
     return count_paths(start, end, graph, {})
 
 
-# Calculates the total number of paths in the
+# Calculates the total number of paths in the acyclic graph from a start point to an end point
 def count_paths(start, end, graph, visited_nodes):
     count = 0
 
