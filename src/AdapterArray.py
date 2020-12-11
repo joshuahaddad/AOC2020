@@ -1,4 +1,6 @@
 # Day 10 Adapter Array
+import networkx as nx
+import matplotlib.pyplot as plt
 
 #Gets the sorted jolt values from the problem input and adds the beginning 0 & the device "built-in" adapter jolts
 def get_jolts():
@@ -9,6 +11,17 @@ def get_jolts():
         jolts.append(jolts[len(jolts) - 1] + 3)
     return jolts
 
+def print_graph():
+    jolts = get_jolts()
+    G = nx.DiGraph()
+    for jolt in jolts:
+        for i in range(1, 4):
+            if jolt + i in jolts:
+                G.add_edge(jolt, jolt+i)
+
+    plt.figure(figsize=(20,10))
+    nx.draw(G, arrows = True, with_labels=True, node_size = 1000)
+    plt.show()
 
 def get_dV():
     jolts = get_jolts()
