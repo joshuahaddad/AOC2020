@@ -1,6 +1,7 @@
 # Day 10 Adapter Array
 import networkx as nx
 import matplotlib.pyplot as plt
+from timeit import default_timer as timer
 
 #Gets the sorted jolt values from the problem input and adds the beginning 0 & the device "built-in" adapter jolts
 def get_jolts():
@@ -87,3 +88,8 @@ def count_paths(start, end, graph, visited_nodes):
 
 
 print(f"Part1: {get_dV()} \nPart2: {get_arrangements()}")
+
+start = timer()
+get_arrangements()
+end = timer()
+print(end-start)
