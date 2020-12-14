@@ -1,5 +1,6 @@
 #Day 11 Seating System
 import copy
+from timeit import default_timer as timer
 
 def get_seats():
     with open("../assets/seats.txt", 'r') as f:
@@ -143,8 +144,6 @@ def part2():
         num_occupied += line.count("#")
     print(num_occupied)
 
-
 part1()
 part2()
-
 
